@@ -1,0 +1,93 @@
+body {
+    background-color: #323946;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-image: url("{{ url_for('static', filename='interview/doodle.webp') }}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .form-container,.container {
+    width: 400px;
+    background-color: rgb(42, 41, 41);
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  h1 {
+    background-color: green;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-container,.container {
+    padding: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-right: 20px;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    border: none;
+    background-color: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    font-size: 16px;
+  }
+  
+  input[type="submit"] {
+    background-color: green;
+    color: white;
+    padding: 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #28a745;
+  }
+  
+  .signup-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+  
+  .signup-button button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .signup-button button:hover {
+    color: green;
+  }

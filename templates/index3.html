@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Face and Posture Recognition</title>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .image-container-left {
+      float: left;
+      width: 50%; /* Adjust width as needed */
+    }
+
+    .image-container-right {
+      float: right;
+      width: 50%; /* Adjust width as needed */
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <a href="#" class="logo1"><i class="fas fa-user-tie" id="int"></i> ImprovU</a>
+
+
+    <nav class="navbar">
+      <a href="http://127.0.0.1:5000/userdash" class="active">Home</a>
+      <a href="http://127.0.0.1:5000/about">About</a>
+    </nav>
+    <div class="profile">
+      <div class="user-circle">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="dropdown">
+        <a class="dropbtn" href="userlogin">Logout</a>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="button-container1">
+    <div class="image-container-left">
+      <img src="{{url_for('static',filename='images.png')}}" style="width: 740px; height: 430px;">
+    </div>
+
+    <div class="image-container-right">
+      <img src="{{ url_for('video_feed') }}" alt="Video Feed" style="width: 100%;">
+    </div>
+    
+    {% if start_state %}
+    <input type="text" style="width:40rem; height:5rem; display: none;" id="answer" >
+    <!-- <input type="text" style="width:40rem; height:5rem;" id="result"> -->
+    <button id="startRecording" class="recording-button">Start Recording</button>
+    <button id="stopRecording" class="recording-button">Stop Recording</button>
+    {% endif %}
+  </div>
+  {% if start_state %}
+  <h2 id="question-container" style="color: aliceblue; font-family: 'Times New Roman', Times, serif;">Tell Me About Your Projects</h2>
+  <div class="button-container1">
+    <button id="start_record" class="recording-button">Start</button>
+    <button id="stop_record" class="recording-button">Stop</button>
+  </div>
+  {% endif %}
+  {% if not start_state %}
+  <div><a href="/start" class="btn1" style="margin-left: 50%;">Start</a></div>
+  {% endif %}
+  {% if start_state %}
+  <div><a href="/analysis" class="btn1" style="margin-left: 50%;">Finish</a></div>
+  {% endif %}
+  <footer class="footer">
+    <div class="social">
+      <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+      <a href="https://www.linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="https://twitter.com/login?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
+    </div>
+
+    <div class="footer-iconTop">
+      <a href="#home"><i class='bx bxs-up-arrow-alt'></i></a>
+    </div>
+
+    <div class="footer-contact">
+      <p>Contact Us:</p>
+
+      <p><img src="{{ url_for('static', filename='map.png') }}" alt="Location Icon"
+          style="filter: brightness(0) invert(1);"> P9V7+CH5, Pallipuram, Cherthala - Arookutty Rd, Thavanakadavu,
+        Cherthala, Kerala 688541 </p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Email: info@example.com</p>
+
+    </div>
+    </div>
+  </footer>
+
+  <script>
+    let chunks = [];
+    let mediaRecorder;
+    let stream;
+    document.getElementById("startRecording").addEventListener("click", function () {
+      fetch('/start_recording', {
+        method: 'POST'
+      });
+    });
+
+    document.getElementById("stopRecording").addEventListener("click", function () {
+      fetch('/stop_recording', {
+        method: 'POST'
+      });
+    });
+
+    
+
+    async function submitAnswer() {
+      const question_container = document.getElementById("question-container")
+      const result_container = document.getElementById("result")
+      const answer = document.getElementById('answer').value;
+      try {
+        const formData = new FormData();
+        formData.append('answer', answer);
+        if (chunks.length > 0) {
+          const blob = new Blob(chunks, { 'type': 'audio/wav' });
+          formData.append('audio', blob, 'recording.wav');
+        }
+
+        const response = await fetch('/submit_answer', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          console.log('Answer submitted successfully.');
+          document.getElementById('answer').value = '';
+          const data = await response.json(); // Await the JSON parsing
+          question_container.innerHTML = data.body.question;
+          result_container.innerHTML = data.body.answer;
+          console.log(data.body)
+        } else {
+          console.error('Error submitting answer.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var startButton = document.getElementById('start_record');
+      var stopButton = document.getElementById('stop_record');
+      // var statusLabel = document.getElementById('status');
+
+      startButton.addEventListener('click', function () {
+        startButton.disabled = true;
+        stopButton.disabled = false;
+        // statusLabel.innerText = "Recording...";
+
+        fetch('/start_record')
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+          })
+          .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+          });
+      });
+
+      stopButton.addEventListener('click', async function () {
+        stopButton.disabled = true;
+        startButton.disabled = false;
+        // statusLabel.innerText = "Stopping recording...";
+
+        fetch('/stop_record')
+          .then(async function (response) {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            } else {
+              data = await response.json()
+              const answer_textbox = document.getElementById("answer")
+              answer_textbox.innerHTML = data.text
+              submitAnswer()
+            }
+          })
+          .catch(error => {
+            console.error('There was a problem with the fetch operation:', error);
+          });
+      });
+    });
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+Tell me about your projects?
+my project is based on python
+The answer you provided is not directly relevant to the question asked. The interviewer is looking for a brief overview of your projects to understand your experience and skills.
+
+Expected Answer: "I have worked on a variety of projects including developing a mobile app for tracking fitness goals, creating a web-based student management system, and implementing a machine learning algorithm for predicting sales trends. Each project allowed me to enhance my coding abilities and problem-solving skills."
+
+Score: 40/100
+Question: Question: Can you walk me through the technical challenges you faced while working on your projects and how you overcame them?
+Optimal answer: None

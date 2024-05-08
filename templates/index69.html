@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Recorder</title>
+</head>
+<body>
+    <h1>Audio Recorder</h1>
+    <button id="start_record">Start Record</button>
+    <button id="stop_record" disabled>Stop Record</button>
+    <p id="status"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var startButton = document.getElementById('start_record');
+            var stopButton = document.getElementById('stop_record');
+            var statusLabel = document.getElementById('status');
+
+            startButton.addEventListener('click', function() {
+                startButton.disabled = true;
+                stopButton.disabled = false;
+                statusLabel.innerText = "Recording...";
+
+                fetch('/start_record')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            });
+
+            stopButton.addEventListener('click', function() {
+                stopButton.disabled = true;
+                startButton.disabled = false;
+                statusLabel.innerText = "Stopping recording...";
+
+                fetch('/stop_record')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

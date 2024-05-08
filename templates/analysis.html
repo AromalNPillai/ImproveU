@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Performance Analysis</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .analysis-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .analysis-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .previous-review {
+            border-top: 2px solid #ccc;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        .review {
+            margin-top: 20px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="analysis-container">
+        <h1 class="analysis-header">Performance Analysis</h1>
+        {% if prev_review %}
+        <div class="previous-review">
+            <h2>Previous Review:</h2>
+            <p>{{ prev_review }}</p>
+        </div>
+        {% endif %}
+        <div class="review">
+            <h2>Interview Score:</h2>
+      
+            <p>{{ score }}</p>
+        </div>
+            
+        <!-- <a href="/userdash" class="back-btn">Back to Home</a> -->
+        <!-- {{ file_out }} -->
+    </div><br>
+
+    <!-- <div class="analysis-container">
+        <p>{{ file_contents | safe }}</p>
+        <a href="/userdash" class="back-btn">Back to Home</a>
+         {{ file_out }} -->
+    </div> 
+
+<br>
+    <div class="analysis-container">
+     
+        {% if prev_review %}
+        <div class="previous-review">
+            <h2>Previous Review:</h2>
+            <p>{{ prev_review }}</p>
+        </div>
+        {% endif %}
+        <div class="review">
+            <h2>Posture Score:</h2>
+      
+            <p>{{ file_contents | safe }}</p>
+        </div>
+            
+        <!-- <a href="/userdash" class="back-btn">Back to Home</a> -->
+        <!-- {{ file_out }} -->
+    </div><br>
+   
+
+    <div class="analysis-container">
+        <p>{{ answers | safe }}</p>
+        <a href="/userdash" class="back-btn">Back to Home</a>
+        <!-- {{ file_out }} -->
+    </div>
+</body>
+
+</html>

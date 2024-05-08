@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Interview Analysis</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+	<div class="container">
+		<h1>Welcome to the Interview analysis </h1>
+		<form action="/review" method="post">
+			<label for="interview_score">Enter your interview score (out of 10):</label>
+			<input type="number" id="interview_score" name="interview_score"  required><br><br>
+			<label for="posture_score">Enter your posture score (out of 10):</label>
+			<input type="number" id="posture_score" name="posture_score" required><br><br>
+			<input type="submit" value="Generate Review">
+		</form>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Assistant</title>
+</head>
+
+<body>
+    <h1>Interview Assistant</h1>
+    <div>
+        <h2 id="question-container">{{ question }}</h2>
+    </div>
+    <button id="start_record">Start Record</button>
+    <button id="stop_record">Stop Record</button>
+    <textarea id="answer" placeholder="Your answer..."></textarea>
+    <p id="result"></p>
+
+    <script>
+        let chunks = [];
+        let mediaRecorder;
+        let stream;
+
+        // async function startRecording() {
+        //     try {
+        //         stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        //         mediaRecorder = new MediaRecorder(stream);
+        //         mediaRecorder.ondataavailable = function (event) {
+        //             chunks.push(event.data);
+        //         };
+        //         mediaRecorder.start();
+        //         console.log('Recording started...');
+        //     } catch (error) {
+        //         console.error('Error accessing microphone:', error);
+        //     }
+        // }
+
+        // function stopRecording() {
+        //     if (mediaRecorder && mediaRecorder.state === 'recording') {
+        //         mediaRecorder.stop();
+        //         console.log('Recording stopped...');
+        //     } else {
+        //         console.warn('No recording to stop.');
+        //     }
+        // }
+
+        // mediaRecorder.onstop = function () {
+        //     const blob = new Blob(chunks, { 'type': 'audio/wav' });
+        //     const audioURL = URL.createObjectURL(blob);
+        //     console.log('Audio URL:', audioURL);
+        //     // Reset chunks array for the next recording
+        //     chunks = [];
+        // };
+
+        async function submitAnswer() {
+            const question_container = document.getElementById("question-container")
+            const result_container = document.getElementById("result")
+            const answer = document.getElementById('answer').value;
+            try {
+                const formData = new FormData();
+                formData.append('answer', answer);
+                if (chunks.length > 0) {
+                    const blob = new Blob(chunks, { 'type': 'audio/wav' });
+                    formData.append('audio', blob, 'recording.wav');
+                }
+
+                const response = await fetch('/submit_answer', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (response.ok) {
+                    console.log('Answer submitted successfully.');
+                    document.getElementById('answer').value = '';
+                    const data = await response.json(); // Await the JSON parsing
+                    question_container.innerHTML = data.body.question;
+                    result_container.innerHTML = data.body.answer;
+                    console.log(data.body)
+                } else {
+                    console.error('Error submitting answer.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var startButton = document.getElementById('start_record');
+            var stopButton = document.getElementById('stop_record');
+            // var statusLabel = document.getElementById('status');
+
+            startButton.addEventListener('click', function() {
+                startButton.disabled = true;
+                stopButton.disabled = false;
+                // statusLabel.innerText = "Recording...";
+
+                fetch('/start_record')
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            });
+
+            stopButton.addEventListener('click',async function() {
+                stopButton.disabled = true;
+                startButton.disabled = false;
+                // statusLabel.innerText = "Stopping recording...";
+
+                fetch('/stop_record')
+                    .then(async function (response) {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        } else {
+                            data = await response.json()
+                            const answer_textbox = document.getElementById("answer")
+                            answer_textbox.innerHTML = data.text
+                            submitAnswer()
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            });
+        });
+
+    </script>
+</body>
+
+</html>

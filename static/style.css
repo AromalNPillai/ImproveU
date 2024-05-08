@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #323946;
+}
+
+/* Dark mode styles*/
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.intro {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  transition: 2s;
+}
+
+.logo-header {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.logo {
+  position: relative;
+  display: inline-block;
+  font-size: 4rem;
+  bottom: -20px;
+  opacity: 0;
+}
+
+.logo.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  z-index: 100;
+}
+
+.logo1 {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 600;
+  cursor: default;
+  flex: 1;
+  margin-left: 5px;
+  background: black;
+  text-decoration: none;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+.navbar a {
+  font-size: 1.2rem;
+  color: white;
+  font-style: bold;
+  margin-left: 1.5rem;
+  transition: .6s;
+  text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: green;
+}
+
+i {
+  color: white;
+  cursor: pointer;
+}
+
+#int {
+  color: green;
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .home .home-content {
+    width: 50%;
+    text-align: left;
+    color: white;
+    padding: 20px;
+  }
+  
+  .home .home-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .home .home-content h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.1;
+  }
+  
+  .home .home-content p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+  }
+  
+  .home .home-content a {
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    background: green;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    transition: 0.6s;
+  }
+  
+  .home .home-content a:hover {
+    background: white;
+    color: green;
+    border: 1px solid green;
+  }
+  
+  .home .home-img {
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+  
+  .home .home-img img {
+    width: 100%;
+    object-fit: cover;
+    animation: bounce 2s linear infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30%);
+    }
+    60% {
+        transform: translateY(-15%);
+    }
+}
+  
+
+  .main{
+    flex: 1;
+    padding: 12.6rem;
+    display: flex;
+    flex-direction: column;
+  
+  }
+  .button-container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .text{
+    display: flex;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    background: black;
+    color: white;
+  }
+  
+  .footer .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  
+  .footer a {
+    font-size: 2rem;
+    margin: 0 0.8rem;
+    color: white;
+    transition: 0.6s;
+  }
+  
+  .footer {
+    
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer .social {
+    display: flex;
+  }
+  
+  .footer .social a {
+    color: white;
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  
+  .footer-iconTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .footer-iconTop:hover {
+    background-color: white;
+    color: #333;
+  }
+
+  .dropbtn {
+    background-color: #f2f2f2;
+    color: black;
+    text-decoration: none;
+    padding: 4px 2px;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 1rem;
+  }
+  .profile .user-circle{
+    
+    margin-left: 2.4rem;
+    margin-bottom: 3px;
+  }
+  .disclaimer {
+    position: fixed;
+    bottom: 7rem; 
+    right: 0;
+    padding: 10px;
+    color: red;
+  }
+ .footer-contact img{
+  color: #fff;
+ }
+ .recording-button {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 20px;
+  
+}
+
+.recording-button:hover {
+  background-color: rgb(1, 53, 1);
+}
+
+.recording-button:active {
+  background-color: rgb(1, 53, 1);
+}
+.main .btn{
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  background: green;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  transition: 0.6s;
+}
+.btn1{
+  display: inline-block;
+  padding: 0.8rem 1rem;
+  background: green;
+  border-radius: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+  transition: 0.6s;
+}
+

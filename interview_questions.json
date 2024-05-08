@@ -1,0 +1,92 @@
+{
+    "questions": [
+        {
+            "question": "Explain the concepts of encapsulation, inheritance, and polymorphism in Python.",
+            "keywords": ["encapsulation", "inheritance", "polymorphism"]
+        },
+        {
+            "question": "How does Python support multiple inheritances? What are the potential issues and how can they be mitigated?",
+            "keywords": ["multiple inheritance", "issues", "mitigation"]
+        },
+        {
+            "question": "Implement a stack and explain its various operations.",
+            "keywords": ["stack", "operations", "implementation"]
+        },
+        {
+            "question": "Discuss the differences between a list and a tuple in Python. When would you use one over the other?",
+            "keywords": ["list", "tuple", "differences", "usage"]
+        },
+        {
+            "question": "Explain the concept of a dictionary in Python. How is it implemented and what are its typical use cases?",
+            "keywords": ["dictionary", "implementation", "use cases"]
+        },
+        {
+            "question": "Implement a binary search algorithm in Python.",
+            "keywords": ["binary search", "algorithm", "implementation"]
+        },
+        {
+            "question": "Describe the differences between depth-first search (DFS) and breadth-first search (BFS). Provide examples of when each algorithm might be more appropriate.",
+            "keywords": ["DFS", "BFS", "differences", "examples", "algorithms"]
+        },
+        {
+            "question": "Discuss time complexity and space complexity in algorithm analysis. Provide examples.",
+            "keywords": ["time complexity", "space complexity", "algorithm analysis", "examples"]
+        },
+        {
+            "question": "Explain the purpose of try-except blocks in Python. Provide an example of how you would use them in your code.",
+            "keywords": ["try-except", "error handling", "example"]
+        },
+        {
+            "question": "How would you debug a Python program that is raising an unexpected exception?",
+            "keywords": ["debugging", "unexpected exception"]
+        },
+        {
+            "question": "Describe the Global Interpreter Lock (GIL) in Python and its implications for concurrency.",
+            "keywords": ["Global Interpreter Lock", "GIL", "concurrency"]
+        },
+        {
+            "question": "Compare and contrast threading and multiprocessing in Python. When would you use one over the other?",
+            "keywords": ["threading", "multiprocessing", "comparison"]
+        },
+        {
+            "question": "Explain the difference between Django and Flask. When would you choose one over the other for a web development project?",
+            "keywords": ["Django", "Flask", "web development", "comparison"]
+        },
+        {
+            "question": "How does RESTful API work, and how would you implement one using Flask?",
+            "keywords": ["RESTful API", "Flask", "implementation", "web development"]
+        },
+        {
+            "question": "Discuss different ways to interact with a relational database in Python.",
+            "keywords": ["relational database", "interaction"]
+        },
+        {
+            "question": "Explain the advantages and disadvantages of using an ORM (Object-Relational Mapping) like SQLAlchemy.",
+            "keywords": ["ORM", "Object-Relational Mapping", "advantages", "disadvantages", "SQLAlchemy"]
+        },
+        {
+            "question": "Discuss the importance of unit testing in software development. Provide an example of how you would write unit tests for a Python function.",
+            "keywords": ["unit testing", "software development", "example"]
+        },
+        {
+            "question": "What is the purpose of mocking in testing, and how would you use it in Python testing frameworks?",
+            "keywords": ["mocking", "testing", "purpose", "frameworks"]
+        },
+        {
+            "question": "Explain the purpose of NumPy and how it is used in scientific computing.",
+            "keywords": ["NumPy", "scientific computing", "purpose"]
+        },
+        {
+            "question": "Discuss the benefits of using pandas for data manipulation and analysis tasks.",
+            "keywords": ["pandas", "data manipulation", "analysis", "benefits"]
+        },
+        {
+            "question": "Describe techniques for optimizing Python code for better performance.",
+            "keywords": ["optimization", "performance"]
+        },
+        {
+            "question": "How would you profile a Python application to identify performance bottlenecks?",
+            "keywords": ["profiling", "performance bottlenecks"]
+        }
+    ]
+}

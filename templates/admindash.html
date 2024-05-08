@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo1"><i class="fas fa-user-tie" id="int"></i> ImprovU</a>
+    
+    
+        <nav class="navbar">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+        </nav>
+        <div class="profile">
+          <div class="user-circle">
+            <i class="fas fa-user-circle"></i>
+          </div>
+            <div class="dropdown">
+              <a class="dropbtn" href="userlogin">Logout</a>
+            </div>
+          </div>
+      </header>
+    <div class="main">
+    <h1 style="color: darkseagreen;">Admin Dashboard</h1>
+    <table style="color: aliceblue;">
+        <thead style="text-align: left;">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user[0] }}</td>
+                    <td>{{ user[1] }}</td>
+                    <td>{{ user[2] }}</td>
+                    <td>
+                        <form action="{{ url_for('delete_user', id=user[0]) }}" method="post">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+    <footer class="footer">
+        <div class="social">
+          <a href="https://www.instagram.com" target="_blank"><i class='bx bxl-instagram-alt'></i></a>
+          <a href="https://www.linkedin.com" target="_blank"><i class='bx bxl-linkedin'></i></a>
+          <a href="https://twitter.com/login?lang=en" target="_blank"><i class='bx bxl-twitter'></i></a>
+        </div>
+    
+        <div class="footer-iconTop">
+          <a href="#home"><i class='bx bxs-up-arrow-alt'></i></a>
+        </div>
+    
+        <div class="footer-contact">
+          <p>Contact Us:</p>
+    
+          <p><img src="{{ url_for('static', filename='map.png') }}" alt="Location Icon" style="filter: brightness(0) invert(1);"> P9V7+CH5, Pallipuram, Cherthala - Arookutty Rd, Thavanakadavu, Cherthala, Kerala 688541 </p>
+          <p>Phone: (123) 456-7890</p>
+          <p>Email: info@example.com</p>
+          
+          </div>
+        </div>
+      </footer>
+</body>
+</html>

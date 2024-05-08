@@ -1,0 +1,3 @@
+Total count: 3
+Correct Posture count: 1
+Accuracy percentage: 33.33%

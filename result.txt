@@ -1,0 +1,120 @@
+Tell Me About Your Project.
+ Answer : my project is based on AI
+Optimal answer: None
+
+Question: That's great! Can you tell me about a specific technical challenge you faced while working on one of your projects and how you solved it?
+
+ Answer : project is based on python
+
+Optimal answer: None
+
+Question: Question: Can you explain a specific technical challenge you encountered during one of your projects and how you solved it?
+
+ Answer : project is based on python
+Question: Tell me about your projects?
+
+Optimal answer: None
+
+Question: Question: Can you describe a specific technical challenge you faced during one of your projects and how you overcame it?
+
+ Answer : Tell me about your projects?what is based on python
+
+Optimal answer: None
+
+Question: Question: In one of your projects, how did you handle a particularly challenging technical problem that emerged during the development process?
+
+ Answer : Tell me about your projects?what is based on python
+
+Optimal answer: None
+
+Question: Question: Can you give me an example of a challenging problem you encountered during one of your projects and how you solved it?
+
+ Answer : Tell me about your projects?
+by Pradeep is based on pipe
+
+Optimal answer: None
+
+Question: Question : Can you walk me through one of your projects and highlight a technical challenge you faced and how you resolved it?
+
+ Answer : Tell me about your projects?
+by Pradeep is based on pipe
+no
+
+Optimal answer: None
+
+Question: That's great to hear about your projects! Can you walk me through a specific technical challenge you faced during one of your projects and how you overcame it?
+
+ Answer : Tell me about your projects?
+by Pradeep is based on pipe
+no
+Question: Question : Can you walk me through one of your projects and highlight a technical challenge you faced and how you resolved it?
+The answer provided is not entirely correct for the question. It lacks specific details about the projects undertaken. A more appropriate response would include a brief overview of the projects, technologies used, role played in the project, challenges faced, and the outcomes achieved. 
+
+Expected answer: "I have worked on several projects during my academic and professional career. One of the notable projects I worked on was developing a mobile application using React Native. I was responsible for frontend development and UI design. The app aimed to simplify task management for users and involved integrating real-time notifications. Despite facing challenges with API integration, we successfully launched the app, garnering positive user feedback and high app store ratings."
+
+Score: 50/100
+project is based on python
+
+ Answer : Tell me about your projects?
+by Pradeep is based on pipe
+no
+Question: Question : Can you walk me through one of your projects and highlight a technical challenge you faced and how you resolved it?
+The answer provided is not entirely correct for the question. It lacks specific details about the projects undertaken. A more appropriate response would include a brief overview of the projects, technologies used, role played in the project, challenges faced, and the outcomes achieved. 
+
+Expected answer: "I have worked on several projects during my academic and professional career. One of the notable projects I worked on was developing a mobile application using React Native. I was responsible for frontend development and UI design. The app aimed to simplify task management for users and involved integrating real-time notifications. Despite facing challenges with API integration, we successfully launched the app, garnering positive user feedback and high app store ratings."
+
+Score: 50/100
+project is based on python
+Question: None
+Question: Question: Can you describe a complex problem you faced during one of your projects and how you resolved it?
+Optimal answer: None
+oh no of course not
+
+ Answer : Tell me about your projects?
+by Pradeep is based on pipe
+no
+Question: Question : Can you walk me through one of your projects and highlight a technical challenge you faced and how you resolved it?
+The answer provided is not entirely correct for the question. It lacks specific details about the projects undertaken. A more appropriate response would include a brief overview of the projects, technologies used, role played in the project, challenges faced, and the outcomes achieved. 
+
+Expected answer: "I have worked on several projects during my academic and professional career. One of the notable projects I worked on was developing a mobile application using React Native. I was responsible for frontend development and UI design. The app aimed to simplify task management for users and involved integrating real-time notifications. Despite facing challenges with API integration, we successfully launched the app, garnering positive user feedback and high app store ratings."
+
+Score: 50/100
+project is based on python
+Question: None
+Question: Question: Can you describe a complex problem you faced during one of your projects and how you resolved it?
+Optimal answer: None
+oh no of course not
+Question: Question: Can you describe a complex problem you faced during one of your projects and how you resolved it?
+The answer provided is partially correct as it addresses the topic of projects but lacks specific details or examples. 
+
+Expected answer: I have worked on various projects including developing a mobile app for tracking fitness goals, designing a website for an e-commerce platform, and creating a database system for a healthcare organization. Each project required different technologies and problem-solving skills, allowing me to gain valuable experience in software development.
+
+Score: 60/100
+Question: Question: Can you walk me through the technical challenges you faced while working on your projects and how you overcame them?
+Optimal answer: None
+
+ Answer : Tell me about your projects?
+what is based on python
+
+ Answer : Tell me about your projects?
+what is based on python
+Answer Review:
+The answer provided is not directly relevant to the question. The candidate simply asks if the answer is correct without actually providing details about their projects. They did not address the question prompt effectively.
+
+Expected Answer:
+"In my recent project, I developed a web-based application that streamlined the user registration process for an e-commerce company. I used React.js for the frontend and Node.js for the backend, implementing RESTful APIs for seamless data flow. The project improved user experience and reduced registration time by 30%."
+
+Score: 20/100
+Question: Explain the difference between a stack and a queue data structure.
+Optimal answer: None
+
+ Answer : Tell me about your projects?
+my project is based on python
+
+ Answer : Tell me about your projects?
+my project is based on python
+Question: Question: Can you walk me through the technical challenges you faced during the implementation of one of your projects?
+Optimal answer: None
+
+ Answer : Tell me about your projects?
+my project is based on python
